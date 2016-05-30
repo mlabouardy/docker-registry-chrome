@@ -1,0 +1,16 @@
+
+.container-custom{
+  margin-top: 25px;
+}
+
+html,body{
+    overflow-y: auto;
+}
+
+body {
+  font-weight: normal;
+}
+
+*{
+  outline: none;
+}

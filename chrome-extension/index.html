@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="dockerRegistry">
+<head>
+  <title>Docker Registry</title>
+  <link rel="stylesheet" href="lib\bootstrap-css\css\bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="assets\css\default.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="lib\angular-material\angular-material.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="lib\components-font-awesome\css\font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body ng-controller="MainCtrl">
+<!--  <registrybuilder></registrybuilder>
+  <registryindex></registryindex> -->
+  <repositories></repositories>
+</body>
+<script src="lib\angular\angular.min.js" charset="utf-8"></script>
+<script src="lib\angular-aria\angular-aria.min.js" charset="utf-8"></script>
+<script src="lib\angular-animate\angular-animate.js" charset="utf-8"></script>
+<script src="lib\angular-material\angular-material.js" charset="utf-8"></script>
+<script src="lib\lodash\dist\lodash.min.js" charset="utf-8"></script>
+<script src="lib\restangular\src\restangular.js" charset="utf-8"></script>
+<script src="app\app.js" charset="utf-8"></script>
+<script src="app\components\components.module.js" charset="utf-8"></script>
+<script src="app\components\registry-builder\registry-builder.js" charset="utf-8"></script>
+<script src="app\components\registry-index\registry-index.js" charset="utf-8"></script>
+<script src="app\components\repositories\repositories.js" charset="utf-8"></script>
+<script src="app\stores\stores.module.js" charset="utf-8"></script>
+<script src="app\stores\store.js" charset="utf-8"></script>
+<script src="app\services\services.module.js" charset="utf-8"></script>
+<script src="app\services\RepositoriesAPI\repositories.js" charset="utf-8"></script>
+</html>

@@ -1,0 +1,67 @@
+<md-toolbar class="md-accent md-hue-2">
+    <h2 class="md-toolbar-tools">
+      <span><i class="fa fa-cog" aria-hidden="true"></i> Configuration</span>
+    </h2>
+</md-toolbar>
+<div class="container-fluid container-custom">
+  <div class="row">
+      <form name="registrybuilderform">
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+          <label>API*</label>
+          <md-select ng-model="$ctrl.registry.api" required>
+            <md-optgroup label="API">
+              <md-option ng-value="api" ng-repeat="api in $ctrl.apis">{{api}}</md-option>
+            </md-optgroup>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+          <label>Protocol*</label>
+          <md-select ng-model="$ctrl.registry.protocol" required>
+            <md-optgroup label="Protocols">
+              <md-option ng-value="protocol" ng-repeat="protocol in $ctrl.protocols">{{protocol}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="registrybuilderform.port.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+            <label>Hostname*</label>
+            <input type="text" class="input-lg" name="hostname" ng-model="$ctrl.registry.hostname" required>
+            <div ng-messages="registrybuilderform.hostname.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+            <label>Port*</label>
+            <input type="text" class="input-lg" name="port" ng-model="$ctrl.registry.port" required>
+            <div ng-messages="registrybuilderform.port.$error">
+              <div ng-message="required">This is required.</div>
+            </div
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+            <label>Username</label>
+            <input type="text" class="input-lg" ng-model="$ctrl.registry.username">
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-6">
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input type="password" class="input-lg" ng-model="$ctrl.registry.password">
+        </md-input-container>
+      </div>
+      <div class="form-group col-md-12">
+        <md-button class="md-raised md-primary md-hue-2" style="width:100%;" ng-disabled="registrybuilderform.$invalid" ng-click="$ctrl.create($ctrl.registry)"><i class="fa fa-check" aria-hidden="true"></i> Create</md-button>
+      </div>
+    </form>
+  </div>
+</div>
