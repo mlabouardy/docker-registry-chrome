@@ -1,6 +1,8 @@
 ## docker-registry-chrome
 Chrome extension to manage docker registry
 
+<img src="demo.gif" class="text-center"/>
+
 ## Features
 
 - Support docker registry v1
