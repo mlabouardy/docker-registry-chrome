@@ -7,15 +7,14 @@
   <link rel="stylesheet" href="lib\angular-material\angular-material.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="lib\components-font-awesome\css\font-awesome.min.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body ng-controller="MainCtrl">
-<!--  <registrybuilder></registrybuilder>
-  <registryindex></registryindex> -->
-  <repositories></repositories>
+<body>
+  <div ng-view=""></div>
 </body>
 <script src="lib\angular\angular.min.js" charset="utf-8"></script>
 <script src="lib\angular-aria\angular-aria.min.js" charset="utf-8"></script>
 <script src="lib\angular-animate\angular-animate.js" charset="utf-8"></script>
 <script src="lib\angular-material\angular-material.js" charset="utf-8"></script>
+<script src="lib\angular-route\angular-route.js" charset="utf-8"></script>
 <script src="lib\lodash\dist\lodash.min.js" charset="utf-8"></script>
 <script src="lib\restangular\src\restangular.js" charset="utf-8"></script>
 <script src="app\app.js" charset="utf-8"></script>
@@ -24,7 +23,14 @@
 <script src="app\components\registry-index\registry-index.js" charset="utf-8"></script>
 <script src="app\components\repositories\repositories.js" charset="utf-8"></script>
 <script src="app\stores\stores.module.js" charset="utf-8"></script>
-<script src="app\stores\store.js" charset="utf-8"></script>
+<script src="app\stores\store\store.js" charset="utf-8"></script>
+<script src="app\stores\cache\cache.js" charset="utf-8"></script>
+<script src="app\stores\server\server.js" charset="utf-8"></script>
 <script src="app\services\services.module.js" charset="utf-8"></script>
-<script src="app\services\RepositoriesAPI\repositories.js" charset="utf-8"></script>
+<script src="app\services\Registry\v1\registry-v1.js" charset="utf-8"></script>
+<script src="app\services\Registry\v2\registry-v2.js" charset="utf-8"></script>
+<script src="app\services\Registry\abstract-registry.js" charset="utf-8"></script>
+<script src="app\controllers\controllers.module.js" charset="utf-8"></script>
+<script src="app\controllers\home\home.js" charset="utf-8"></script>
+<script src="app\controllers\repositories\repositories.js" charset="utf-8"></script>
 </html>

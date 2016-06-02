@@ -1,1 +1,1 @@
-angular.module('dockerRegistry.services', ['restangular']);
+angular.module('dockerRegistry.services', ['restangular', 'dockerRegistry.stores']);

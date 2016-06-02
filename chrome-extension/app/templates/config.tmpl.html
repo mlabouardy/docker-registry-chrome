@@ -1,0 +1,35 @@
+<md-dialog aria-label="Config Server"  ng-cloak>
+  <form>
+    <md-toolbar class="md-accent md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2>Config Server</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div layout-gt-sm="row">
+          <div flex="100">
+            <md-input-container class="md-block">
+              <label>Server</label>
+              <input type="text" class="input-lg" name="hostname" ng-model="$ctrl.server" required>
+              <div class="hint" ng-if="true">For example: http://localhost:8080</div>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer($ctrl.server)">
+       Validate
+      </md-button>
+      <md-button ng-click="answer($ctrl.server)" style="margin-right:20px;">
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

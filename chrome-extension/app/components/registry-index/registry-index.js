@@ -1,11 +1,11 @@
-var RegistryIndexCtrl = function ($mdDialog, Store) {
+var RegistryIndexCtrl = function ($mdDialog, Store, $location, $scope) {
   var self = this;
   self.registries = [];
+  self.registries = Store.registries;
 
   self.remove = function (ev, index) {
     var confirm = $mdDialog.confirm()
           .title('Would you like to delete this registry?')
-          .ariaLabel('Lucky day')
           .targetEvent(ev)
           .ok('Yes')
           .cancel('No');
@@ -19,6 +19,11 @@ var RegistryIndexCtrl = function ($mdDialog, Store) {
   };
 
   Store.subscribe(self.registryChanged);
+
+  self.view = function (registry) {
+    Store.selectedRegistry = registry;
+    $location.path('/repositories');
+  };
 };
 
 var RegistryIndexComponent = {

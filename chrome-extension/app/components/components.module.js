@@ -1,1 +1,1 @@
-angular.module('dockerRegistry.components', ['ngMaterial','dockerRegistry.stores', 'dockerRegistry.services']);
+angular.module('dockerRegistry.components', ['ngMaterial', 'dockerRegistry.stores', 'dockerRegistry.services']);

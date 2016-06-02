@@ -1,1 +1,36 @@
-Repositories
+<md-toolbar class="md-accent md-hue-2">
+    <h2 class="md-toolbar-tools">
+      <a href="#/" class="prev-btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+      <span><img src="assets/images/docker.png" class="docker-icon"> Repositories</span>
+    </h2>
+</md-toolbar>
+<div class="container-fluid container-custom" ng-hide="$ctrl.repositories.length > 0 || $ctrl.emptyRepository">
+  <div class="alert alert-warning">
+    <i class="fa fa-spinner" aria-hidden="true"></i> Loading ...
+  </div>
+</div>
+<div class="container-fluid container-custom" ng-show="$ctrl.emptyRepository">
+  <div class="alert alert-success">
+    <i class="fa fa-spinner" aria-hidden="true"></i> Empty registry ...
+  </div>
+</div>
+<div ng-cloak ng-show="$ctrl.repositories.length > 0">
+  <md-content>
+    <md-tabs md-dynamic-height md-disable-animation md-border-bottom>
+      <md-tab ng-show="$ctrl.api ==='v1'" ng-repeat="repo in $ctrl.repositories track by $index" md-on-select="$ctrl.onSelectTab(repo.name)" label="{{repo.name}}">
+        <md-content class="md-padding">
+          <ul ng-show="$ctrl.tags" ng-repeat="tag in $ctrl.tags">
+            <li>{{tag}}</li>
+          </ul>
+        </md-content>
+      </md-tab>
+      <md-tab ng-show="$ctrl.api ==='v2'" ng-repeat="repo in $ctrl.repositories track by $index" md-on-select="$ctrl.onSelectTab(repo)" label="{{repo}}">
+        <md-content class="md-padding">
+          <ul ng-show="$ctrl.tags" ng-repeat="tag in $ctrl.tags">
+            <li>{{tag}}</li>
+          </ul>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

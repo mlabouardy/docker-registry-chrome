@@ -1,0 +1,32 @@
+{
+  "name": "docker-registry-chrome",
+  "authors": [
+    "mlabouardy <mohamed@labouardy.com>"
+  ],
+  "description": "Chrome extension to manage docker registries",
+  "main": "background.js",
+  "keywords": [
+    "Docker",
+    "Chrome",
+    "Registry",
+    "Containers",
+    "Images"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap-css": "^3.3.6",
+    "angular-material": "^1.0.9",
+    "components-font-awesome": "^4.6.3",
+    "restangular": "^1.5.2",
+    "angular-route": "^1.5.6"
+  }
+}

@@ -1,12 +1,35 @@
 <md-toolbar class="md-accent md-hue-2">
-    <h2 class="md-toolbar-tools">
-      <span><i class="fa fa-cog" aria-hidden="true"></i> Configuration</span>
-    </h2>
+  <h2 class="md-toolbar-tools">
+    <span><i class="fa fa-cog" aria-hidden="true"></i> Configuration</span>
+    <md-menu md-position-mode="target-right target" >
+          <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </md-button>
+          <md-menu-content width="5">
+            <md-menu-item>
+              <md-button ng-click="$ctrl.configServer($event)">
+                  <div layout="row" flex>
+                    <p flex>Back-end Server</p>
+                    <i class="fa fa-cogs menu-item" aria-hidden="true"></i>
+                  </div>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="$ctrl.help()">
+                  <div layout="row" flex>
+                    <p flex>Help</p>
+                    <i class="fa fa-question menu-item" aria-hidden="true"></i>
+                  </div>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+  </h2>
 </md-toolbar>
 <div class="container-fluid container-custom">
-  <div class="row">
-      <form name="registrybuilderform">
-      <div class="form-group col-md-6">
+  <form name="registrybuilderform">
+    <div layout-gt-sm="row">
+      <div flex="50">
         <md-input-container class="md-block">
           <label>API*</label>
           <md-select ng-model="$ctrl.registry.api" required>
@@ -16,7 +39,7 @@
           </md-select>
         </md-input-container>
       </div>
-      <div class="form-group col-md-6">
+      <div flex="50">
         <md-input-container class="md-block">
           <label>Protocol*</label>
           <md-select ng-model="$ctrl.registry.protocol" required>
@@ -29,39 +52,48 @@
           </div>
         </md-input-container>
       </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div layout-gt-sm="row">
+      <div flex="50">
         <md-input-container class="md-block">
-            <label>Hostname*</label>
-            <input type="text" class="input-lg" name="hostname" ng-model="$ctrl.registry.hostname" required>
-            <div ng-messages="registrybuilderform.hostname.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
+          <label>Hostname*</label>
+          <input type="text" class="input-lg" name="hostname" ng-model="$ctrl.registry.hostname" required>
+          <div class="hint" ng-if="true">Example: localhost, 127.0.0.1</div>
         </md-input-container>
       </div>
-      <div class="form-group col-md-6">
+      <div flex="50">
         <md-input-container class="md-block">
-            <label>Port*</label>
-            <input type="text" class="input-lg" name="port" ng-model="$ctrl.registry.port" required>
-            <div ng-messages="registrybuilderform.port.$error">
-              <div ng-message="required">This is required.</div>
-            </div
+          <label>Port*</label>
+          <input type="number" class="input-lg" name="port" ng-model="$ctrl.registry.port" required>
+          <div class="hint" ng-if="true">Example: 5000</div>
         </md-input-container>
       </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div layout-gt-sm="row">
+      <div flex="50">
         <md-input-container class="md-block">
-            <label>Username</label>
-            <input type="text" class="input-lg" ng-model="$ctrl.registry.username">
+          <md-checkbox ng-change="$ctrl.onRegistryAuthentication()" ng-model="$ctrl.registry.protected" aria-label="Private Registry">
+            <div class="md-subhead">Private Docker registry with basic authentication</div>
+          </md-checkbox>
         </md-input-container>
       </div>
-      <div class="form-group col-md-6">
+    </div>
+    <div layout-gt-sm="row">
+      <div flex="25">
         <md-input-container class="md-block">
-            <label>Password</label>
-            <input type="password" class="input-lg" ng-model="$ctrl.registry.password">
+          <label>Username</label>
+          <input type="text" class="input-lg" ng-model="$ctrl.registry.username" ng-disabled="!$ctrl.registry.protected">
         </md-input-container>
       </div>
-      <div class="form-group col-md-12">
-        <md-button class="md-raised md-primary md-hue-2" style="width:100%;" ng-disabled="registrybuilderform.$invalid" ng-click="$ctrl.create($ctrl.registry)"><i class="fa fa-check" aria-hidden="true"></i> Create</md-button>
+      <div flex="25">
+        <md-input-container class="md-block">
+          <label>Password</label>
+          <input type="password" class="input-lg" ng-model="$ctrl.registry.password" ng-disabled="!$ctrl.registry.protected">
+        </md-input-container>
       </div>
-    </form>
-  </div>
+      <div flex="50">
+        <md-button class="md-raised md-primary md-hue-2 create-btn" ng-disabled="registrybuilderform.$invalid" ng-click="$ctrl.create($ctrl.registry)"><i class="fa fa-check" aria-hidden="true"></i> Create</md-button>
+      </div>
+    </div>
+  </form>
 </div>

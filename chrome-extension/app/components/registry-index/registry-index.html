@@ -1,13 +1,13 @@
 <md-toolbar class="md-accent md-hue-2">
     <h2 class="md-toolbar-tools">
-      <span><img src="assets/images/docker.png" style="width:12%"> Docker Registries</span>
+      <span><img src="assets/images/docker.png" class="docker-icon"> Docker Registries</span>
     </h2>
 </md-toolbar>
 <div class="container-fluid container-custom">
   <div ng-hide="$ctrl.registries.length>0" class="alert alert-warning">
     <i class="fa fa-frown-o" aria-hidden="true"></i> Empty list
   </div>
-  <table ng-show="$ctrl.registries.length>0" class="table table-sm" style="font-size:12px">
+  <table ng-show="$ctrl.registries.length>0" class="table table-sm registries-table">
     <thead>
       <tr>
         <th>Status</th>
@@ -21,7 +21,8 @@
     </thead>
     <tbody>
       <tr ng-repeat="reg in $ctrl.registries track by $index">
-        <td><span class="label label-success">Online</span></td>
+        <td ng-show="reg.online"><span class="label label-success">Online</span></td>
+        <td ng-hide="reg.online"><span class="label label-danger">Error</span></td>
         <td>{{reg.hostname}}</td>
         <td>{{reg.port}}</td>
         <td>{{reg.username}}</td>
@@ -29,7 +30,7 @@
         <td>{{reg.api}}</td>
         <td>
           <div class="btn-group">
-            <a class="label label-info" href="#/registry/{{registry.api}}/{{$index}}/images"><i class="fa fa-eye"></i> View</a>
+            <a class="label label-info" ng-click="$ctrl.view(reg)" ng-show="reg.online"><i class="fa fa-eye"></i> View</a>
             <a class="label label-danger" ng-click="$ctrl.remove($event, $index)"><i class="fa fa-trash"></i> Delete</a>
           </div>
         </td>

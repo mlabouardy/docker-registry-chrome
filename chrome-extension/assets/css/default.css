@@ -14,3 +14,27 @@ body {
 *{
   outline: none;
 }
+
+.prev-btn{
+  font-size:38px;
+  margin-right:20px;
+}
+
+.create-btn{
+  width:100%;
+  font-size:17px;
+  height:48px;
+  text-transform: capitalize;
+}
+
+.registries-table{
+  font-size:12px;
+}
+
+.docker-icon{
+  width:12%;
+}
+
+.menu-item{
+  margin: auto 3px auto 0;
+}
