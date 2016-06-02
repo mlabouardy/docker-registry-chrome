@@ -1,0 +1,5 @@
+backend:
+  container_name: backend
+  image: mlabouardy/docker-registry-chrome
+  ports:
+    - "8080:8080"

@@ -1,0 +1,25 @@
+{
+  "name": "docker registry",
+  "authors": [
+    "mlabouardy <mohamed@labouardy.com>"
+  ],
+  "description": "Docker Registry Chrome extension",
+  "main": "index.html",
+  "keywords": [
+    "Chrome",
+    "Docker",
+    "Registry"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-css": "^3.3.6"
+  }
+}

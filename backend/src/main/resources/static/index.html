@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"></meta>
+<link rel="stylesheet" href="lib\bootstrap-css\css\bootstrap.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+<title>Docker Registry Back-end</title>
+</head>
+<body class="container-fluid custom-container">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>URL</th>
+						<th>HTTP Method</th>
+						<th>Body</th>
+						<th>Result</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>/v1/repositories</td>
+						<td>POST</td>
+						<td>JSON String</td>
+						<td>Returns all repositories</td>
+					</tr>
+					<tr>
+						<td>/v1/repositories/tags</td>
+						<td>POST</td>
+						<td>JSON String</td>
+						<td>Returns all tags</td>
+					</tr>
+					<tr>
+						<td>/v2/repositories</td>
+						<td>POST</td>
+						<td>JSON String</td>
+						<td>Returns all repositories</td>
+					</tr>
+					<tr>
+						<td>/v2/repositories/tags</td>
+						<td>POST</td>
+						<td>JSON String</td>
+						<td>Returns all tags</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</body>
+</html>
