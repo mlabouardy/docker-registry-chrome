@@ -7,6 +7,14 @@ Chrome extension to manage docker registry
 - Support docker registry v2
 - Support basic authentication registry
 
+
+## Quickstart
+
+```sh
+$ docker run -d -p 8080:8080 --name backend mlabouardy/docker-registry-chrome
+```
+Open your browser to http://IP_ADDR:8080
+
 ## Help
 
 If you run into issues, please don't hesitate to find help on the GitHub project.
